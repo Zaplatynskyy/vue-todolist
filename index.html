@@ -29,7 +29,9 @@
                 <div class="todolist">
                     <!-- intestazione todo list con titolo e input per nuovi elementi -->
                     <div class="header_main">
-                        <h1>ToDo List</h1>
+                        <h1 v-if="sentinel == 0">To Do List</h1>
+                        <h1 v-else>Done List</h1>
+
     
                         <div class="add">
                             <input type="text" placeholder="Inserisci nuovo compito da svolgere" v-model = "newTodo" @keyup.enter = "addTodo()">
@@ -38,15 +40,22 @@
                     </div>
     
                     <!-- lista compiti da svolgere -->
-                    <ul class="bottom_main">
+                    <ul class="content_main">
                         <li v-for="(todo, i) in elements[sentinel].todos">
                             <div class="text">
-                                <input type="checkbox" :id="tagId + i" @click = "changeDone(i)" v-model="todo.done">
+                                <input v-if="sentinel == 0" type="checkbox" :id="tagId + i" @click = "changeDone(i)" v-model="todo.done">
                                 <label :for="tagId + i" :class="{line_through : todo.done}">{{todo.text}}</label>
                             </div>
-                            <i class="far fa-trash-alt" @click="deleteTodo(i)"></i>
+                            <i v-if="sentinel == 0" class="far fa-trash-alt" @click="deleteTodo(i)"></i>
                         </li>
                     </ul>
+
+                    <!-- <div class="bottom_main">
+                        <button v-if="sentinel == 0" @click="deleteSelected()">
+                            <span>Remove checked</span>
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div> -->
                 </div>
     
             </div>

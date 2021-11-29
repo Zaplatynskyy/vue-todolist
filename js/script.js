@@ -1,34 +1,6 @@
 const app = new Vue({
     el : '#root',
     data : {
-        // categories : ['All', 'ToDo', 'Done'],
-        // todos : [
-        //     {
-        //         text : 'Fare la spesa',
-        //         done : false
-        //     },
-        //     {
-        //         text : 'Fare la lavatrice',
-        //         done : false
-        //     },
-        //     {
-        //         text : 'Preparare il pasto',
-        //         done : false
-        //     },
-        //     {
-        //         text : 'Pulire casa',
-        //         done : false
-        //     },
-        //     {
-        //         text : 'Lavorare al pc',
-        //         done : false
-        //     },
-        //     {
-        //         text : 'Chiamare John',
-        //         done : false
-        //     }
-        // ],
-
         elements : [
             {
                 category : 'To Do',
@@ -72,9 +44,9 @@ const app = new Vue({
 
     methods : {
         deleteTodo: function(i) {
-            this.elements[this.sentinel].todos[i].done = false;
+            this.elements[this.sentinel].todos[i].done = true;
             this.elements[1].todos.push(this.elements[this.sentinel].todos[i]);
-            this.elements[this.sentinel].todos.splice(i,1);
+            this.elements[this.sentinel].todos.splice(i, 1);
         },
 
         addTodo: function() {
@@ -87,7 +59,18 @@ const app = new Vue({
 
         changeDone: function(i) {
             this.elements[this.sentinel].todos[i].done = !this.elements[this.sentinel].todos[i].done;
-        }
+        },
+
+        // deleteSelected: function() {
+        //     for(let i = 0; i < this.elements[0].todos.length; i++) {
+        //         if(this.elements[0].todos[i].done) {
+        //             console.log(this.elements[0].todos[i]);
+        //             this.elements[this.sentinel].todos[i].done = true;
+        //             this.elements[1].todos.push(this.elements[this.sentinel].todos[i]);
+        //             this.elements[this.sentinel].todos.splice(i, 1);
+        //         }
+        //     }
+        // }
 
 
     },
