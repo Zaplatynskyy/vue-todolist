@@ -31,7 +31,7 @@ const app = new Vue({
 
         elements : [
             {
-                category : 'All',
+                category : 'To Do',
                 todos : [
                     {
                         text : 'Fare la spesa',
@@ -60,10 +60,6 @@ const app = new Vue({
                 ]
             },
             {
-                category : 'To Do',
-                todos : [],
-            },
-            {
                 category : 'Done',
                 todos : [],
             }
@@ -76,8 +72,9 @@ const app = new Vue({
 
     methods : {
         deleteTodo: function(i) {
+            this.elements[this.sentinel].todos[i].done = false;
+            this.elements[1].todos.push(this.elements[this.sentinel].todos[i]);
             this.elements[this.sentinel].todos.splice(i,1);
-            // document.getElementById(`element_${i}`).checked = false;
         },
 
         addTodo: function() {
@@ -91,6 +88,8 @@ const app = new Vue({
         changeDone: function(i) {
             this.elements[this.sentinel].todos[i].done = !this.elements[this.sentinel].todos[i].done;
         }
+
+
     },
 });
 

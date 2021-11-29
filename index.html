@@ -38,10 +38,12 @@
                     </div>
     
                     <!-- lista compiti da svolgere -->
-                    <ul>
+                    <ul class="bottom_main">
                         <li v-for="(todo, i) in elements[sentinel].todos">
-                            <input type="checkbox" :id="tagId + i" @click = "changeDone(i)" v-model="todo.done">
-                            <label :for="tagId + i" :class="{line_through : todo.done}">{{todo.text}}</label>
+                            <div class="text">
+                                <input type="checkbox" :id="tagId + i" @click = "changeDone(i)" v-model="todo.done">
+                                <label :for="tagId + i" :class="{line_through : todo.done}">{{todo.text}}</label>
+                            </div>
                             <i class="far fa-trash-alt" @click="deleteTodo(i)"></i>
                         </li>
                     </ul>

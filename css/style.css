@@ -58,6 +58,7 @@ header ul li:hover {
     margin: auto;
 }
 
+/* header_main */
 .header_main {
     display: flex;
     justify-content: space-between;
@@ -93,7 +94,8 @@ h1 {
     background-color: #0bfa76;
 }
 
-main ul {
+/* bottom_main */
+.bottom_main {
     list-style: none;
 }
 
@@ -107,6 +109,13 @@ main ul li {
 }
 main ul li:last-child {
     border-bottom: 1px solid #0bfa76;
+}
+.text {
+    display: flex;
+    align-items: center;
+}
+.text input[type="checkbox"] {
+    margin-right: 5px;
 }
 main li i {
     cursor: pointer;
