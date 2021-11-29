@@ -1,3 +1,38 @@
+const app = new Vue({
+    el : '#root',
+    data : {
+        todos : [
+            {
+                text : 'Fare la spesa',
+                done : false
+            },
+            {
+                text : 'Fare la lavatrice',
+                done : false
+            },
+            {
+                text : 'Preparare il pasto',
+                done : false
+            },
+            {
+                text : 'Pulire casa',
+                done : false
+            },
+            {
+                text : 'Lavorare al pc',
+                done : false
+            },
+            {
+                text : 'Chiamare John',
+                done : false
+            }
+        ],
+    },
+    methods : {
+        
+    }
+});
+
 // Rifare l'esercizio della to do list.
 // Questa volta però ogni todo sarà un oggetto, formato da due proprietà:
 // - text, una stringa che indica il testo del todo

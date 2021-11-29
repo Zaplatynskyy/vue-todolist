@@ -10,6 +10,10 @@
     margin: auto;
 }
 
+.line_through {
+    text-decoration: line-through;
+}
+
 /* *****HEADER***** */
 header {
     background-color: #f0f9ff;
