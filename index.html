@@ -6,10 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body class="debug">
+
+    <header>
+        <div class="container">
+            <img src="https://www.boolean.careers/images/misc/logo.png" alt="boolean logo">
+            <nav>
+                <ul>
+                    <li>All</li>
+                    <li>To Do</li>
+                    <li>Done</li>
+                </ul>
+            </nav>
+        </div>  
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="todolist">
+                <!-- intestazione todo list con titolo e input per nuovi elementi -->
+                <div class="header_main">
+                    <h1>ToDo List</h1>
+
+                    <div class="add">
+                        <input type="text" placeholder="Inserisci nuovo compito da svolgere">
+                        <button>Add new</button>
+                    </div>
+                </div>
+
+                <!-- lista compiti da svolgere -->
+                <ul>
+                    <li>
+                        <span>Compito da Svolgere</span>
+                        <i class="far fa-trash-alt"></i>
+                    </li>
+                    <li>
+                        <span>Compito da Svolgere</span>
+                        <i class="far fa-trash-alt"></i>
+                    </li>
+                    <li>
+                        <span>Compito da Svolgere</span>
+                        <i class="far fa-trash-alt"></i>
+                    </li>
+                    <li>
+                        <span>Compito da Svolgere</span>
+                        <i class="far fa-trash-alt"></i>
+                    </li>
+                    <li>
+                        <span>Compito da Svolgere</span>
+                        <i class="far fa-trash-alt"></i>
+                    </li>
+                    <li>
+                        <span>Compito da Svolgere</span>
+                        <i class="far fa-trash-alt"></i>
+                    </li>
+                    <li>
+                        <span>Compito da Svolgere</span>
+                        <i class="far fa-trash-alt"></i>
+                    </li>
+                    <li>
+                        <span>Compito da Svolgere</span>
+                        <i class="far fa-trash-alt"></i>
+                    </li>
+                    <li>
+                        <span>Compito da Svolgere</span>
+                        <i class="far fa-trash-alt"></i>
+                    </li>
+                    <li>
+                        <span>Compito da Svolgere</span>
+                        <i class="far fa-trash-alt"></i>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
     
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/script.js"></script>
 </body>
