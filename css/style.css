@@ -100,13 +100,14 @@ main ul {
 main ul li {
     font-size: 18px;
     border-top: 1px solid #0bfa76;
-    border-bottom: 1px solid #0bfa76;
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
+main ul li:last-child {
+    border-bottom: 1px solid #0bfa76;
+}
 main li i {
     cursor: pointer;
 }

@@ -17,9 +17,7 @@
                 <img src="https://www.boolean.careers/images/misc/logo.png" alt="boolean logo">
                 <nav>
                     <ul>
-                        <li>All</li>
-                        <li>To Do</li>
-                        <li>Done</li>
+                        <li v-for="(element, i) in elements" @click="sentinel = i">{{element.category}}</li>
                     </ul>
                 </nav>
             </div>  
@@ -41,8 +39,9 @@
     
                     <!-- lista compiti da svolgere -->
                     <ul>
-                        <li v-for="(todo, i) in todos">
-                            <span :class="{line_through : todo.done}" @click = "changeDone(i)">{{todo.text}}</span>
+                        <li v-for="(todo, i) in elements[sentinel].todos">
+                            <input type="checkbox" :id="tagId + i" @click = "changeDone(i)" v-model="todo.done">
+                            <label :for="tagId + i" :class="{line_through : todo.done}">{{todo.text}}</label>
                             <i class="far fa-trash-alt" @click="deleteTodo(i)"></i>
                         </li>
                     </ul>

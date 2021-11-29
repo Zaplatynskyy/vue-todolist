@@ -1,54 +1,99 @@
 const app = new Vue({
     el : '#root',
     data : {
-        todos : [
+        // categories : ['All', 'ToDo', 'Done'],
+        // todos : [
+        //     {
+        //         text : 'Fare la spesa',
+        //         done : false
+        //     },
+        //     {
+        //         text : 'Fare la lavatrice',
+        //         done : false
+        //     },
+        //     {
+        //         text : 'Preparare il pasto',
+        //         done : false
+        //     },
+        //     {
+        //         text : 'Pulire casa',
+        //         done : false
+        //     },
+        //     {
+        //         text : 'Lavorare al pc',
+        //         done : false
+        //     },
+        //     {
+        //         text : 'Chiamare John',
+        //         done : false
+        //     }
+        // ],
+
+        elements : [
             {
-                text : 'Fare la spesa',
-                done : false
+                category : 'All',
+                todos : [
+                    {
+                        text : 'Fare la spesa',
+                        done : false
+                    },
+                    {
+                        text : 'Fare la lavatrice',
+                        done : false
+                    },
+                    {
+                        text : 'Preparare il pasto',
+                        done : false
+                    },
+                    {
+                        text : 'Pulire casa',
+                        done : false
+                    },
+                    {
+                        text : 'Lavorare al pc',
+                        done : false
+                    },
+                    {
+                        text : 'Chiamare John',
+                        done : false
+                    } 
+                ]
             },
             {
-                text : 'Fare la lavatrice',
-                done : false
+                category : 'To Do',
+                todos : [],
             },
             {
-                text : 'Preparare il pasto',
-                done : false
-            },
-            {
-                text : 'Pulire casa',
-                done : false
-            },
-            {
-                text : 'Lavorare al pc',
-                done : false
-            },
-            {
-                text : 'Chiamare John',
-                done : false
+                category : 'Done',
+                todos : [],
             }
         ],
-
-        newTodo : ''
+        sentinel : 0,
+        newTodo : '',
+        tagId : 'element_',
+        todosDelected : [],
     },
 
     methods : {
         deleteTodo: function(i) {
-            this.todos.splice(i,1);
+            this.elements[this.sentinel].todos.splice(i,1);
+            // document.getElementById(`element_${i}`).checked = false;
         },
 
         addTodo: function() {
             if(this.newTodo != '') {
                 const todoObject = {text : this.newTodo, done : false};
-                this.todos.push(todoObject);
+                this.elements[this.sentinel].todos.push(todoObject);
                 this.newTodo = '';
             }
         },
 
         changeDone: function(i) {
-            this.todos[i].done = !this.todos[i].done
+            this.elements[this.sentinel].todos[i].done = !this.elements[this.sentinel].todos[i].done;
         }
     },
 });
+
 
 // Rifare l'esercizio della to do list.
 // Questa volta però ogni todo sarà un oggetto, formato da due proprietà:
