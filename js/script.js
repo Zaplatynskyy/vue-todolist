@@ -42,6 +42,10 @@ const app = new Vue({
                 this.todos.push(todoObject);
                 this.newTodo = '';
             }
+        },
+
+        changeDone: function(i) {
+            this.todos[i].done = !this.todos[i].done
         }
     },
 });

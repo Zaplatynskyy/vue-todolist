@@ -42,7 +42,7 @@
                     <!-- lista compiti da svolgere -->
                     <ul>
                         <li v-for="(todo, i) in todos">
-                            <span :class="{line_through : todo.done}">{{todo.text}}</span>
+                            <span :class="{line_through : todo.done}" @click = "changeDone(i)">{{todo.text}}</span>
                             <i class="far fa-trash-alt" @click="deleteTodo(i)"></i>
                         </li>
                     </ul>
