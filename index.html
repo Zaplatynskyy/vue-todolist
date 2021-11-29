@@ -34,8 +34,8 @@
                         <h1>ToDo List</h1>
     
                         <div class="add">
-                            <input type="text" placeholder="Inserisci nuovo compito da svolgere">
-                            <button>Add new</button>
+                            <input type="text" placeholder="Inserisci nuovo compito da svolgere" v-model = "newTodo">
+                            <button @click = "addTodo">Add new</button>
                         </div>
                     </div>
     

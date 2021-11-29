@@ -27,12 +27,20 @@ const app = new Vue({
                 done : false
             }
         ],
+
+        newTodo : ''
     },
+
     methods : {
         deleteTodo: function(i) {
             this.todos.splice(i,1);
+        },
+
+        addTodo: function() {
+            const todoObject = {text : this.newTodo, done : false};
+            this.todos.push(todoObject);
         }
-    }
+    },
 });
 
 // Rifare l'esercizio della to do list.
