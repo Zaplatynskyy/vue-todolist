@@ -17,7 +17,7 @@
                 <img src="https://www.boolean.careers/images/misc/logo.png" alt="boolean logo">
                 <nav>
                     <ul>
-                        <li v-for="(element, i) in elements" @click="sentinel = i">{{element.category}}</li>
+                        <li v-for="(element, i) in elements" @click="sentinel = i" :class="{ active: sentinel==i }">{{element.category}}</li>
                     </ul>
                 </nav>
             </div>  
@@ -35,7 +35,7 @@
     
                         <div class="add">
                             <input type="text" placeholder="Inserisci nuovo compito da svolgere" v-model = "newTodo" @keyup.enter = "addTodo()">
-                            <button @click = "addTodo">Add new</button>
+                            <button class="btn" @click = "addTodo">Add new</button>
                         </div>
                     </div>
     
@@ -50,12 +50,13 @@
                         </li>
                     </ul>
 
-                    <!-- <div class="bottom_main">
-                        <button v-if="sentinel == 0" @click="deleteSelected()">
+                    <!-- bottone per rimuovere più elementi -->
+                    <div class="bottom_main">
+                        <button class="btn" v-if="sentinel == 0" @click="deleteSelected()">
                             <span>Remove checked</span>
                             <i class="fas fa-times"></i>
                         </button>
-                    </div> -->
+                    </div>
                 </div>
     
             </div>

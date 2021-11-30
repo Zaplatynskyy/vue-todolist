@@ -39,7 +39,7 @@ const app = new Vue({
         sentinel : 0,
         newTodo : '',
         tagId : 'element_',
-        todosDelected : [],
+        arrayCopy : [],
     },
 
     methods : {
@@ -61,18 +61,19 @@ const app = new Vue({
             this.elements[this.sentinel].todos[i].done = !this.elements[this.sentinel].todos[i].done;
         },
 
-        // deleteSelected: function() {
-        //     for(let i = 0; i < this.elements[0].todos.length; i++) {
-        //         if(this.elements[0].todos[i].done) {
-        //             console.log(this.elements[0].todos[i]);
-        //             this.elements[this.sentinel].todos[i].done = true;
-        //             this.elements[1].todos.push(this.elements[this.sentinel].todos[i]);
-        //             this.elements[this.sentinel].todos.splice(i, 1);
-        //         }
-        //     }
-        // }
-
-
+        deleteSelected: function() {
+            for(let i = 0; i < this.elements[0].todos.length; i++) {
+                if(!this.elements[0].todos[i].done) {
+                    this.arrayCopy.push(this.elements[0].todos[i]);
+                } else {
+                    this.elements[this.sentinel].todos[i].done = true;
+                    this.elements[1].todos.push(this.elements[this.sentinel].todos[i]);
+                }
+            }
+            this.elements[0].todos = this.arrayCopy;
+            this.arrayCopy = [];
+            
+        }
     },
 });
 
